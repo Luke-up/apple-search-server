@@ -1,7 +1,10 @@
 //import express library and set the port on which to listen
 const express = require("express");
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+const path = require("path");
+
+app.use(express.static(path.join(__dirname + "/public")));
 
 //use helmet to secure the express app
 const helmet = require("helmet");
