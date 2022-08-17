@@ -18,7 +18,7 @@ describe("Unit test", () => {
 describe("Snapshot test", () => {
   test("should carry out get request", async () => {
     const response = await request(app).get(
-      "/media?term=Lucy&&media=movie&&attribute=movieTerm"
+      "/media?term=Lucy&&media=movie&&attribute=movieTerm&&limit=1"
     );
     expect(response.body).toMatchSnapshot(this);
   });

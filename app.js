@@ -14,7 +14,7 @@ app.get("/media", (req, res) => {
       .get("https://itunes.apple.com/search?", {
         params: {
           term: req.query.term,
-          limit: 1,
+          limit: req.query.limit,
           media: req.query.media,
           attribute: req.query.attribute,
         },
