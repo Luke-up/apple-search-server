@@ -1,10 +1,12 @@
+//Supertest is used to create CRUD operations
 const request = require("supertest");
 const app = require("./app");
 
+//test checks if response is recieved from server
 describe("Unit test", () => {
   test("server should return response", (done) => {
     request(app)
-      .get("/")
+      .get("/okay")
       .expect(200)
       .expect((res) => {
         res.body = "okay";
@@ -15,6 +17,8 @@ describe("Unit test", () => {
       });
   });
 });
+
+//test checks if the itunes API is functioning
 describe("Snapshot test", () => {
   test("should carry out get request", async () => {
     const response = await request(app).get(
